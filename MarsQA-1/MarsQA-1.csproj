@@ -163,6 +163,7 @@
     <None Include="Feature\Login.feature" />
     <None Include="SpecflowTests\Data\Data.xlsx" />
     <None Include="packages.config" />
+    <None Include="SpecflowTests\Data\Mars.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SpecflowTests\Bind_Steps\" />

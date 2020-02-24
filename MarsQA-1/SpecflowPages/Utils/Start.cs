@@ -20,8 +20,7 @@ namespace MarsQA_1.Utils
         {
             //launch the browser
             Initialize();
-            Thread.Sleep(5000);
-
+            ExcelLibHelper.PopulateInCollection(@"MarsQA-1\SpecflowTests\Data\Mars.xlsx", "Credentials");
             //call the SignIn class
             SignIn.SigninStep();
         }
@@ -29,7 +28,7 @@ namespace MarsQA_1.Utils
         [AfterScenario]
         public void TearDown()
         {
-            Thread.Sleep(500);
+
             // Screenshot
             string img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");
            test.Log(LogStatus.Info, "Snapshot below: " + test.AddScreenCapture(img));

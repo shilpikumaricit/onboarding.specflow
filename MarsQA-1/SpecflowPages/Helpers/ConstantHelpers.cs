@@ -9,7 +9,7 @@ namespace MarsQA_1.Helpers
     public class ConstantHelpers
     {
         //Base Url
-        public static string Url = "http://www.skillswap.pro/";
+        public static string Url = "http://localhost:5000";
 
         //ScreenshotPath
         public static string ScreenshotPath = "";
