@@ -1,5 +1,6 @@
 ﻿using MarsQA_1.Helpers;
 using OpenQA.Selenium;
+using System;
 using System.Threading;
 
 namespace MarsQA_1.Pages
@@ -9,14 +10,17 @@ namespace MarsQA_1.Pages
         private static IWebElement SignInBtn =>  Driver.driver.FindElement(By.XPath("//A[@class='item'][text()='Sign In']"));
         private static IWebElement Email => Driver.driver.FindElement(By.XPath("(//INPUT[@type='text'])[2]"));
         private static IWebElement Password => Driver.driver.FindElement(By.XPath("//INPUT[@type='password']"));
-        private static IWebElement LoginBtn => Driver.driver.FindElement(By.XPath("//BUTTON[@class='fluid ui teal button'][text()='Login']"));
+        private static IWebElement LoginBtn => Driver.driver.FindElement(By.XPath("//button[contains(.,'Login')]"));
         public static void SigninStep()
         {
             Driver.NavigateUrl();
             SignInBtn.Click();
             Email.SendKeys(ExcelLibHelper.ReadData(2,"username"));
             Password.SendKeys(ExcelLibHelper.ReadData(2, "password"));
+            Console.WriteLine(ExcelLibHelper.ReadData(2, "username"));
+            Console.WriteLine(ExcelLibHelper.ReadData(2, "password"));
             LoginBtn.Click();
+            Thread.Sleep(5000);
         }
         public static void Login()
         {
