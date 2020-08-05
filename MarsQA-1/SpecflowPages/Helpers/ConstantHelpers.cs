@@ -15,9 +15,9 @@ namespace MarsQA_1.Helpers
         public static string ScreenshotPath = @"C:\Users\Shilpi\Source\Repos\onboarding.specflow\MarsQA-1\TestReports\Screenshots";
 
         //ExtentReportsPath
-        public static string ReportsPath = "";
+        public static string ReportsPath = @"C:\Users\Shilpi\Source\Repos\onboarding.specflow\MarsQA-1\TestReports\Screenshots";
 
         //ReportXML Path
-        public static string ReportXMLPath = "";
+        public static string ReportXMLPath = @"C:\Users\Shilpi\Source\Repos\onboarding.specflow\MarsQA-1\TestReports\Screenshots";
     }
 }

@@ -17,8 +17,6 @@ namespace MarsQA_1.Pages
             SignInBtn.Click();
             Email.SendKeys(ExcelLibHelper.ReadData(2,"username"));
             Password.SendKeys(ExcelLibHelper.ReadData(2, "password"));
-            Console.WriteLine(ExcelLibHelper.ReadData(2, "username"));
-            Console.WriteLine(ExcelLibHelper.ReadData(2, "password"));
             LoginBtn.Click();
             Thread.Sleep(5000);
         }
@@ -30,10 +28,10 @@ namespace MarsQA_1.Pages
             Driver.driver.FindElement(By.XPath("//A[@class='item'][text()='Sign In']")).Click();
 
             //Enter Username
-            Driver.driver.FindElement(By.XPath("(//INPUT[@type='text'])[2]")).SendKeys("");
+            Driver.driver.FindElement(By.XPath("(//INPUT[@type='text'])[2]")).SendKeys(ExcelLibHelper.ReadData(2, "username"));
 
             //Enter password
-            Driver.driver.FindElement(By.XPath("//INPUT[@type='password']")).SendKeys("");
+            Driver.driver.FindElement(By.XPath("//INPUT[@type='password']")).SendKeys(ExcelLibHelper.ReadData(2, "password"));
 
             //Click on Login Button
             Driver.driver.FindElement(By.XPath("//BUTTON[@class='fluid ui teal button'][text()='Login']")).Click();

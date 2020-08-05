@@ -6,34 +6,49 @@ using OpenQA.Selenium;
 namespace MarsQA_1.SpecflowPages.Pages
 {
     class AddLanguage
-    {
-        private DropDownSelector dropDownSelector;
+    {      
 
+        private DropDownSelector dropDownSelector;
 
         private static IWebElement AddLanguageButton => Driver.driver.FindElement(By.XPath("(//div[contains(.,'Add New')])[11]"));
         private static IWebElement AddLanguageField => Driver.driver.FindElement(By.XPath("//input[@placeholder='Add Language']"));
 
+        private static IWebElement EditLanguageButton => Driver.driver.FindElement(By.XPath("(//i[@class='outline write icon'])[2]"));
+        private static IWebElement EditLanguageField => Driver.driver.FindElement(By.XPath("//input[contains(@value,'English')]"));
+
+        private static IWebElement UpdateLanguageButton => Driver.driver.FindElement(By.XPath("//input[contains(@value,'Update')]"));
+
+        private static IWebElement DeleteLanguageButton => Driver.driver.FindElement(By.XPath("(//i[@class='remove icon'])[1]"));
         public AddLanguage()
         {
             this.dropDownSelector = new DropDownSelector();
         }
 
-        public void Addlanguage(string language)
+        public void Addlanguage(string language, string selectLevel)
         {
             string XPath = "//select[@class='ui dropdown']";
-            string indexOfElement = "Basic";
+            AddLanguageField.SendKeys(language);
+            this.dropDownSelector.getElementSelected(XPath, selectLevel);
             Driver.driver.FindElement(By.XPath("(//div[contains(.,'Add New')])[11]")).Click();
-            Driver.driver.FindElement(By.XPath("//input[@placeholder='Add Language']")).SendKeys(language);
-            this.dropDownSelector.getElementSelected(XPath, indexOfElement);
-            //SelectElement userRole = new SelectElement(driver.FindElement(By.XPath("//select[@class='ui dropdown']")));
-            //userRole.SelectByText("Basic");
-            Driver.driver.FindElement(By.XPath("//input[contains(@class,'ui teal button')]")).Click();
-            VerifySkill(language);
+            AddLanguageButton.Click();
+            VerifyLanguage(language);
         }
 
-        private void VerifySkill(string skillName)
+        internal void EditLanguage(string actualLanguage, string newLanguage)
         {
-            Console.WriteLine("");
+            EditLanguageButton.Click();
+            EditLanguageField.SendKeys(newLanguage);
+            UpdateLanguageButton.Click();
+        }
+
+        public void VerifyLanguage (string Language)
+        {
+            DeleteLanguageButton.Click();
+        }
+
+        internal void DeleteLanguage(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

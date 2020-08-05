@@ -156,7 +156,9 @@
     <Compile Include="SpecflowPages\Helpers\DropDownSelector.cs" />
     <Compile Include="SpecflowPages\Helpers\ExcelLibHelper.cs" />
     <Compile Include="SpecflowPages\Pages\AddLanguage.cs" />
+    <Compile Include="SpecflowPages\Pages\AddDescription.cs" />
     <Compile Include="SpecflowPages\Pages\SignIn.cs" />
+    <Compile Include="SpecflowPages\Pages\VerifyTheAddFunction.cs" />
     <Compile Include="SpecflowPages\Utils\Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecflowTests\Bind_Steps\AddSellerProfileSteps.cs" />
