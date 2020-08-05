@@ -13,8 +13,8 @@ namespace MarsQA_1.SpecflowPages.Pages
         private static IWebElement AddLanguageButton => Driver.driver.FindElement(By.XPath("(//div[contains(.,'Add New')])[11]"));
         private static IWebElement AddLanguageField => Driver.driver.FindElement(By.XPath("//input[@placeholder='Add Language']"));
 
-        private static IWebElement EditLanguageButton => Driver.driver.FindElement(By.XPath("(//i[@class='outline write icon'])[2]"));
-        private static IWebElement EditLanguageField => Driver.driver.FindElement(By.XPath("//input[contains(@value,'English')]"));
+        private static IWebElement EditLanguageButton => Driver.driver.FindElement(By.XPath("(//i[contains(@class,'outline write icon')])[2]"));
+        private static IWebElement EditLanguageField => Driver.driver.FindElement(By.XPath("//input[@placeholder='Add Language']"));
 
         private static IWebElement UpdateLanguageButton => Driver.driver.FindElement(By.XPath("//input[contains(@value,'Update')]"));
 
@@ -27,11 +27,10 @@ namespace MarsQA_1.SpecflowPages.Pages
         public void Addlanguage(string language, string selectLevel)
         {
             string XPath = "//select[@class='ui dropdown']";
+            AddLanguageButton.Click();
             AddLanguageField.SendKeys(language);
             this.dropDownSelector.getElementSelected(XPath, selectLevel);
-            Driver.driver.FindElement(By.XPath("(//div[contains(.,'Add New')])[11]")).Click();
-            AddLanguageButton.Click();
-            VerifyLanguage(language);
+            Driver.driver.FindElement(By.XPath("//input[@value='Add']")).Click();
         }
 
         internal void EditLanguage(string actualLanguage, string newLanguage)
@@ -43,12 +42,12 @@ namespace MarsQA_1.SpecflowPages.Pages
 
         public void VerifyLanguage (string Language)
         {
-            DeleteLanguageButton.Click();
+            Console.WriteLine(Language);
         }
 
         internal void DeleteLanguage(string v)
         {
-            throw new NotImplementedException();
+            DeleteLanguageButton.Click();
         }
     }
 }
