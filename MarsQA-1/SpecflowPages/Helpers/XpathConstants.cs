@@ -29,6 +29,7 @@ namespace MarsQA_1.SpecflowPages.Helpers
 
         public static string DeleteLanguageButtonXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[{0}]/tr/td[3]/span[2]/i";
 
+        public static string UpdateLanguageXpath = "//input[contains(@value,'Update')]";
 
     }
 }

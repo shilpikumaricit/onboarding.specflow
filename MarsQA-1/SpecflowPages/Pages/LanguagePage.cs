@@ -16,7 +16,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         private static IWebElement AddLanguageField 
             => Driver.driver.FindElement(By.XPath(XpathConstants.AddLangaugeField));
 
-        private static IWebElement UpdateLanguageButton => Driver.driver.FindElement(By.XPath("//input[contains(@value,'Update')]"));
+        private static IWebElement UpdateLanguageButton => Driver.driver.FindElement(By.XPath(XpathConstants.UpdateLanguageXpath));
 
         public LanguagePage()
         {

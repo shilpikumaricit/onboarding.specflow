@@ -11,6 +11,9 @@ namespace MarsQA_1.Helpers
         //Base Url
         public static string Url = "http://localhost:5000";
 
+        public static string CredentialExcelPathLocation = @"C:\Users\Shilpi\source\repos\onboarding.specflow\MarsQA-1\SpecflowTests\Data\Mars.xlsx";
+
+        public static string DataFilePath = @"C:\Users\Shilpi\source\repos\onboarding.specflow\MarsQA-1\SpecflowTests\Data\Data.xlsx";
         //ScreenshotPath
         public static string ScreenshotPath = @"C:\Users\Shilpi\Source\Repos\onboarding.specflow\MarsQA-1\TestReports\Screenshots";
 

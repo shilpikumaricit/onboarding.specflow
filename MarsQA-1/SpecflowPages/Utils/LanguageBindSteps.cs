@@ -14,7 +14,7 @@ namespace MarsQA_1.Utils
         public void Setup()
         {
             Initialize();
-            ExcelLibHelper.PopulateInCollection(@"C:\Users\Shilpi\source\repos\onboarding.specflow\MarsQA-1\SpecflowTests\Data\Mars.xlsx", "Credentials");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.CredentialExcelPathLocation, "Credentials");
             SignIn.SigninStep();
         }
 
@@ -27,13 +27,15 @@ namespace MarsQA_1.Utils
         [Then(@"Seller should be able to add the language to the profile page")]
         public void ThenSellerShouldBeAbleToAddTheLanguageToTheProfilePage()
         {
-            addLanguage.Addlanguage("English", "Basic");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            addLanguage.Addlanguage(ExcelLibHelper.ReadData(2, "Language"), ExcelLibHelper.ReadData(2, "Level"));
         }
 
         [Then(@"should be able to verify the add language")]
         public void ThenShouldBeAbleToVerifyTheAddLanguage()
         {
-            bool actualResult = addLanguage.VerifyLanguage("English");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(2, "Language"));
             Assert.True(actualResult);
         }
         [When(@"Seller click on edit Language  button")]
@@ -45,20 +47,23 @@ namespace MarsQA_1.Utils
         [Then(@"Seller should be able to edit the language to the profile page")]
         public void ThenSellerShouldBeAbleToEditTheLanguageToTheProfilePage()
         {
-            addLanguage.EditLanguage("English", "Hindi");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            addLanguage.EditLanguage(ExcelLibHelper.ReadData(2, "Language"), ExcelLibHelper.ReadData(3, "Language"));
         }
 
         [Then(@"should be able to verify the edited language")]
         public void ThenShouldBeAbleToVerifyTheEditedLanguage()
         {
-            bool actualResult = addLanguage.VerifyLanguage("Hindi");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(3, "Language"));
             Assert.True(actualResult);
         }
 
         [When(@"Seller click on delete Language  button")]
         public void WhenSellerClickOnDeleteLanguageButton()
         {
-            addLanguage.DeleteLanguage("Hindi");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            addLanguage.DeleteLanguage(ExcelLibHelper.ReadData(3, "Language"));
         }
 
         [Then(@"Seller should be able to delete the language to the profile page")]
@@ -70,7 +75,8 @@ namespace MarsQA_1.Utils
         [Then(@"should be able to verify the deleted language")]
         public void ThenShouldBeAbleToVerifyTheDeletedLanguage()
         {
-            bool actualResult = addLanguage.VerifyLanguage("Hindi");
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
+            bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(3, "Language"));
             Assert.False(actualResult);
         }
 
