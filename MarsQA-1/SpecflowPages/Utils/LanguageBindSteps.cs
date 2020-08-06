@@ -9,7 +9,7 @@ namespace MarsQA_1.Utils
     [Binding]
     public class Start : Driver
     {
-        private AddLanguage addLanguage = new AddLanguage();
+        private LanguagePage addLanguage = new LanguagePage();
         [BeforeScenario]
         public void Setup()
         {
@@ -33,9 +33,9 @@ namespace MarsQA_1.Utils
         [Then(@"should be able to verify the add language")]
         public void ThenShouldBeAbleToVerifyTheAddLanguage()
         {
-            addLanguage.VerifyLanguage("English");
+            bool actualResult = addLanguage.VerifyLanguage("English");
+            Assert.True(actualResult);
         }
-
         [When(@"Seller click on edit Language  button")]
         public void WhenSellerClickOnEditLanguageButton()
         {
@@ -51,7 +51,8 @@ namespace MarsQA_1.Utils
         [Then(@"should be able to verify the edited language")]
         public void ThenShouldBeAbleToVerifyTheEditedLanguage()
         {
-            addLanguage.VerifyLanguage("Hindi");
+            bool actualResult = addLanguage.VerifyLanguage("Hindi");
+            Assert.True(actualResult);
         }
 
         [When(@"Seller click on delete Language  button")]
@@ -69,7 +70,8 @@ namespace MarsQA_1.Utils
         [Then(@"should be able to verify the deleted language")]
         public void ThenShouldBeAbleToVerifyTheDeletedLanguage()
         {
-            addLanguage.VerifyLanguage("Hindi");
+            bool actualResult = addLanguage.VerifyLanguage("Hindi");
+            Assert.False(actualResult);
         }
 
         [AfterScenario]

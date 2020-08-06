@@ -149,23 +149,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature\Login.cs" />
     <Compile Include="SpecflowPages\Helpers\CommonMethods.cs" />
     <Compile Include="SpecflowPages\Helpers\ConstantHelpers.cs" />
     <Compile Include="SpecflowPages\Helpers\Driver.cs" />
     <Compile Include="SpecflowPages\Helpers\DropDownSelector.cs" />
     <Compile Include="SpecflowPages\Helpers\ExcelLibHelper.cs" />
-    <Compile Include="SpecflowPages\Pages\AddLanguage.cs" />
+    <Compile Include="SpecflowPages\Pages\LanguagePage.cs" />
     <Compile Include="SpecflowPages\Pages\AddDescription.cs" />
     <Compile Include="SpecflowPages\Pages\SignIn.cs" />
     <Compile Include="SpecflowPages\Pages\VerifyTheAddFunction.cs" />
-    <Compile Include="SpecflowPages\Utils\Start.cs" />
+    <Compile Include="SpecflowPages\Utils\LanguageBindSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecflowTests\Bind_Steps\AddSellerProfileSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Feature\Login.feature" />
+    <None Include="Feature\Language.feature" />
     <None Include="SpecflowTests\Data\Data.xlsx" />
     <None Include="packages.config" />
     <None Include="SpecflowTests\Data\Mars.xlsx" />
