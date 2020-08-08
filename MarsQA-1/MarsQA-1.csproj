@@ -156,9 +156,8 @@
     <Compile Include="SpecflowPages\Helpers\ExcelLibHelper.cs" />
     <Compile Include="SpecflowPages\Helpers\XpathConstants.cs" />
     <Compile Include="SpecflowPages\Pages\LanguagePage.cs" />
-    <Compile Include="SpecflowPages\Pages\AddDescription.cs" />
     <Compile Include="SpecflowPages\Pages\SignIn.cs" />
-    <Compile Include="SpecflowPages\Pages\VerifyTheAddFunction.cs" />
+    <Compile Include="SpecflowPages\Pages\SkillPage.cs" />
     <Compile Include="SpecflowPages\Utils\LanguageBindSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecflowTests\Bind_Steps\AddSellerProfileSteps.cs" />

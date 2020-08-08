@@ -23,3 +23,12 @@ Scenario: 3 Delete existing Language
 	When Seller click on delete Language  button
 	Then Seller should be able to delete the language to the profile page
 	And should be able to verify the deleted language
+
+@Psitive
+ Scenario: Add New skill 
+   #Given Seller loging to mars application as seller
+   #And Seller navigate to the profile page
+   When Seller click on skill button
+   Then Click on add new button 
+   Then Add a skill in add skill field and Select a level from choose skill level
+   Then click on add button seller should able to add skill succesfully

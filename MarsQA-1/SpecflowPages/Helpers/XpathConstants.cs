@@ -26,6 +26,11 @@ namespace MarsQA_1.SpecflowPages.Helpers
         public static string DeleteLanguageButtonXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[{0}]/tr/td[3]/span[2]/i";
 
         public static string UpdateLanguageXpath = "//input[contains(@value,'Update')]";
-
-    }
+        //XpathConstants for skill functionality
+        public static string SkillTab = "//a[contains(.,'Skills')]";
+        public static string SkillAddNewButton = "//div[@class='ui teal button'][contains(.,'Add New')]";
+        public static string AddSkillField = "//input[contains(@placeholder,'Add Skill')]";
+        public static string SkillDropdown = "//select[@class='ui fluid dropdown']";
+        public static string Addbutton = "//input[@value='Add']";
+    }  
 }

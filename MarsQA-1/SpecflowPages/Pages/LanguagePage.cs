@@ -27,7 +27,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         {
             AddLanguageButton.Click();
             AddLanguageField.SendKeys(language);
-            this.dropDownSelector.getElementSelected(XpathConstants.LanguageDropdownXPath, selectLevel);
+            this.dropDownSelector.getElementSelectedByName(XpathConstants.LanguageDropdownXPath, selectLevel);
             Driver.driver.FindElement(By.XPath(XpathConstants.AddLanguageButton)).Click();
         }
 

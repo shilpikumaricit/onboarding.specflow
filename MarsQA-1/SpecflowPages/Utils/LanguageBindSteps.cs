@@ -10,6 +10,7 @@ namespace MarsQA_1.Utils
     public class Start : Driver
     {
         private LanguagePage addLanguage = new LanguagePage();
+        private SkillPage addSkillPage;
         [BeforeScenario]
         public void Setup()
         {
@@ -78,6 +79,32 @@ namespace MarsQA_1.Utils
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
             bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(3, "Language"));
             Assert.False(actualResult);
+        }
+
+        [When(@"Seller click on skill button")]
+        public void WhenSellerClickOnSkillButton()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"Click on add new button")]
+        public void ThenClickOnAddNewButton()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"Add a skill in add skill field and Select a level from choose skill level")]
+        public void ThenAddASkillInAddSkillFieldAndSelectALevelFromChooseSkillLevel()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"click on add button seller should able to add skill succesfully")]
+        public void ThenClickOnAddButtonSellerShouldAbleToAddSkillSuccesfully()
+        {
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Skill");
+            addSkillPage = new SkillPage();
+            addSkillPage.AddSkill(ExcelLibHelper.ReadData(2, "Skill"), ExcelLibHelper.ReadData(2, "Level"));
         }
 
         [AfterScenario]
