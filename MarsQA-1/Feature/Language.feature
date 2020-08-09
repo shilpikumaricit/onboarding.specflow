@@ -45,3 +45,15 @@ Scenario: 6 Delete existing Skill
 	When Seller click on delete Skill  button
 	Then Seller should be able to delete the Skill to the profile page
 	And should be able to verify the deleted Skill
+
+Scenario: 7 Add Eduction
+When seller click on Education Tab And Click on Add new Button
+Then Seller should be able to fill his eduction and Verify it.
+
+Scenario: 8 Edit Eduction
+When seller click on Education Tab And Click on Edit existing education Button
+Then Seller should be able to Edit his eduction and Verify it.
+
+Scenario: 9 Delete Eduction
+When seller click on Education Tab And Click on Delete existing education Button
+Then Seller should be able to Delete his eduction and Verify it.

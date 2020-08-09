@@ -1,5 +1,7 @@
 ﻿
 
+using System.Net.NetworkInformation;
+
 namespace MarsQA_1.SpecflowPages.Helpers
 {
     class XpathConstants
@@ -40,5 +42,26 @@ namespace MarsQA_1.SpecflowPages.Helpers
         public static string SkillUpdateField = "//input[contains(@value,'{0}')]";
         public static string DeleteSkillButton = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[{0}]/tr/td[3]/span[2]/i";
         public static string SkillUpdateFieldXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[{0}]/tr/td[1]";
+
+        // Education Start 
+        public static string educationTabXPath = "//a[contains(@data-tab,'third')]";
+        public static string educationAddNewXPath = "(//div[contains(.,'Add New')])[21]";
+        public static string inputCollegeXPath = "//input[contains(@placeholder,'College/University Name')]";
+        public static string inputDegreeXPath = "//input[contains(@placeholder,'Degree')]";
+        public static string selectCountryXPath = "//select[contains(@name,'country')]";
+        public static string selectTitleXPath = "//select[contains(@name,'title')]";
+        public static string selectYearOfPassingXPath = "//select[contains(@name,'yearOfGraduation')]";
+        public static string eductionTableXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody";
+        public static string TableRowFieldValueXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[{0}]/tr/td[2]";
+
+        public static string EducationUpdateFieldXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[{0}]/tr/td[2]";
+
+        public static string EducationEditButton = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[{0}]/tr/td[6]/span[1]/i";
+
+        public static string EducationUpdateField = "//input[contains(@value,'{0}')]";
+
+        public static string EducationUpdateButton = "//input[contains(@value,'Update')]";
+        internal static string DeleteEducationButton = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[{0}]/tr/td[6]/span[2]/i";
+        // Education End
     }    
 }

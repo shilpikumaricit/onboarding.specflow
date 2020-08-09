@@ -167,6 +167,72 @@ namespace MarsQA_1.Utils
             //Assert.False(actualResult);
         }
 
+        [When(@"seller click on Education Tab And Click on Add new Button")]
+        public void WhenSellerClickOnEducationTabAndClickOnAddNewButton()
+        {
+            EducationPage educationPage = new EducationPage();
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Education");
+            string collegeName = ExcelLibHelper.ReadData(2, "CollegeName");
+            string country = ExcelLibHelper.ReadData(2, "Country");
+            string title = ExcelLibHelper.ReadData(2, "Title");
+            string degree = ExcelLibHelper.ReadData(2, "Degree");
+            string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
+            educationPage.AddEduction(collegeName, country, title, degree, yearOfPassing);
+            bool isRecordPresent = educationPage.VerifyDegree(collegeName, country, title, degree, yearOfPassing);
+            Assert.True(isRecordPresent);
+        }
+
+        [Then(@"Seller should be able to fill his eduction and Verify it\.")]
+        public void ThenSellerShouldBeAbleToFillHisEductionAndVerifyIt_()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
+        [When(@"seller click on Education Tab And Click on Edit existing education Button")]
+        public void WhenSellerClickOnEducationTabAndClickOnEditExistingEducationButton()
+        {
+            EducationPage educationPage = new EducationPage();
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Education");
+            string originalCollegeName = ExcelLibHelper.ReadData(2, "CollegeName");
+            string NewcollegeName = ExcelLibHelper.ReadData(3, "CollegeName");
+            string country = ExcelLibHelper.ReadData(2, "Country");
+            string title = ExcelLibHelper.ReadData(2, "Title");
+            string degree = ExcelLibHelper.ReadData(2, "Degree");
+            string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
+            educationPage.EditEducation(originalCollegeName, NewcollegeName);
+            bool isRecordPresent = educationPage.VerifyDegree(NewcollegeName, country, title, degree, yearOfPassing);
+            Assert.True(isRecordPresent);
+        }
+
+        [Then(@"Seller should be able to Edit his eduction and Verify it\.")]
+        public void ThenSellerShouldBeAbleToEditHisEductionAndVerifyIt_()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
+        // Delete Education
+        [When(@"seller click on Education Tab And Click on Delete existing education Button")]
+        public void WhenSellerClickOnEducationTabAndClickOnDeleteExistingEducationButton()
+        {
+            EducationPage educationPage = new EducationPage();
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Education");
+            string originalCollegeName = ExcelLibHelper.ReadData(2, "CollegeName");
+            string NewcollegeName = ExcelLibHelper.ReadData(3, "CollegeName");
+            string country = ExcelLibHelper.ReadData(2, "Country");
+            string title = ExcelLibHelper.ReadData(2, "Title");
+            string degree = ExcelLibHelper.ReadData(2, "Degree");
+            string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
+            educationPage.EducationDelete(NewcollegeName);
+            bool isRecordPresent = educationPage.VerifyDegree(NewcollegeName, country, title, degree, yearOfPassing);
+            Assert.False(isRecordPresent);
+        }
+
+        [Then(@"Seller should be able to Delete his eduction and Verify it\.")]
+        public void ThenSellerShouldBeAbleToDeleteHisEductionAndVerifyIt_()
+        {
+            //ScenarioContext.Current.Pending();
+        }
+
 
     }
 }

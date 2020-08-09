@@ -157,6 +157,7 @@
     <Compile Include="SpecflowPages\Helpers\XpathConstants.cs" />
     <Compile Include="SpecflowPages\Pages\LanguagePage.cs" />
     <Compile Include="SpecflowPages\Pages\SignIn.cs" />
+    <Compile Include="SpecflowPages\Pages\EducationPage.cs" />
     <Compile Include="SpecflowPages\Pages\SkillPage.cs" />
     <Compile Include="SpecflowPages\Utils\LanguageBindSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
