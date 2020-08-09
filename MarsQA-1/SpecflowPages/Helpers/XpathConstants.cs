@@ -32,5 +32,13 @@ namespace MarsQA_1.SpecflowPages.Helpers
         public static string AddSkillField = "//input[contains(@placeholder,'Add Skill')]";
         public static string SkillDropdown = "//select[@class='ui fluid dropdown']";
         public static string Addbutton = "//input[@value='Add']";
-    }  
+        public static string SkillTableXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody";
+        public static string skillEditButton = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[{0}]/tr/td[3]/span[1]/i";
+        public static string SkillUpdateButton = "//input[@class='ui teal button']";
+       
+        // "//input[contains(@value,'Ruby1')]"
+        public static string SkillUpdateField = "//input[contains(@value,'{0}')]";
+        public static string DeleteSkillButton = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[{0}]/tr/td[3]/span[2]/i";
+        public static string SkillUpdateFieldXPath = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[{0}]/tr/td[1]";
+    }    
 }
