@@ -53,7 +53,8 @@ namespace MarsQA_1.SpecflowPages.Pages
 
         public Boolean VerifyLanguage (string Language)
         {
-            Thread.Sleep(5000);
+            //Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(1000);
             int LanguageFieldRecordCount = Driver.driver.FindElements(By.XPath(XpathConstants.LanguageTablePath)).Count;
             bool recordFound = false;
             for (int i = 1; i <= LanguageFieldRecordCount; i++)
@@ -71,7 +72,7 @@ namespace MarsQA_1.SpecflowPages.Pages
 
         internal void DeleteLanguage(string LanguageToDelete)
         {
-            Thread.Sleep(5000);
+            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             int LanguageFieldRecordCount = Driver.driver.FindElements(By.XPath(XpathConstants.LanguageTablePath)).Count;
             for (int i = 1; i <= LanguageFieldRecordCount; i++)
             {

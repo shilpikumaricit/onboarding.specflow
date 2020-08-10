@@ -71,6 +71,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         public Boolean VerifyDegree(string College, string Country, string Title,
             String Degree, string YearOfPassing)
         {
+            //Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Thread.Sleep(5000);
             int SkillFieldRecordCount = Driver.driver.FindElements(By.XPath(XpathConstants.eductionTableXPath)).Count;
             bool recordFound = false;
@@ -89,7 +90,7 @@ namespace MarsQA_1.SpecflowPages.Pages
 
         public void EducationDelete(string CollegeToDelete)
         {
-            Thread.Sleep(5000);
+            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             ClickOnEducationTab.Click();
             int recordsCount = Driver.driver.FindElements(By.XPath(XpathConstants.eductionTableXPath)).Count;
             for (int i = 1; i <= recordsCount; i++)

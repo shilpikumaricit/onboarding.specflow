@@ -40,6 +40,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         }
         public Boolean VerifySkill(string Skill)
         {
+            //Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Thread.Sleep(5000);
             int SkillFieldRecordCount = Driver.driver.FindElements(By.XPath(XpathConstants.SkillTableXPath)).Count;
             bool recordFound = false;
@@ -78,7 +79,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         }//Delete functianlity
         internal void SkillDelete(string SkillToDelete)
         {
-            Thread.Sleep(5000);
+            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             ClickSkillTab.Click();
             int SkillFieldRecordCount = Driver.driver.FindElements(By.XPath(XpathConstants.SkillTableXPath)).Count;
             for (int i = 1; i <= SkillFieldRecordCount; i++)

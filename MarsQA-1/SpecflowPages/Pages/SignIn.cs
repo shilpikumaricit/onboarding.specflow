@@ -18,7 +18,7 @@ namespace MarsQA_1.Pages
             Email.SendKeys(ExcelLibHelper.ReadData(2,"username"));
             Password.SendKeys(ExcelLibHelper.ReadData(2, "password"));
             LoginBtn.Click();
-            Thread.Sleep(5000);
+            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
         public static void Login()
         {
