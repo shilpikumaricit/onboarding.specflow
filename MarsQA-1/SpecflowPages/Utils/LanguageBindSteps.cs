@@ -1,4 +1,6 @@
-﻿using MarsQA_1.Helpers;
+﻿using System;
+using System.Runtime.CompilerServices;
+using MarsQA_1.Helpers;
 using MarsQA_1.Pages;
 using MarsQA_1.SpecflowPages.Pages;
 using NUnit.Framework;
@@ -37,7 +39,16 @@ namespace MarsQA_1.Utils
         {
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
             bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(2, "Language"));
-            Assert.True(actualResult);
+            //Assert.True(actualResult);
+            if (actualResult)
+            {
+                Assert.True(actualResult);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
         [When(@"Seller click on edit Language  button")]
         public void WhenSellerClickOnEditLanguageButton()
@@ -57,7 +68,16 @@ namespace MarsQA_1.Utils
         {
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
             bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(3, "Language"));
-            Assert.True(actualResult);
+            // Assert.True(actualResult);
+            if (actualResult)
+            {
+                Assert.True(actualResult);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [When(@"Seller click on delete Language  button")]
@@ -78,7 +98,16 @@ namespace MarsQA_1.Utils
         {
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Language");
             bool actualResult = addLanguage.VerifyLanguage(ExcelLibHelper.ReadData(3, "Language"));
-            Assert.False(actualResult);
+            //Assert.False(actualResult);
+            if (!actualResult)
+            {
+                Assert.False(actualResult);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [When(@"Seller click on skill button")]
@@ -105,7 +134,14 @@ namespace MarsQA_1.Utils
             skillPage = new SkillPage();
             skillPage.AddSkill(ExcelLibHelper.ReadData(2, "Skill"), ExcelLibHelper.ReadData(2, "Level"));
             bool actualResult = skillPage.VerifySkill(ExcelLibHelper.ReadData(2, "Skill"));
-            Assert.True(actualResult);
+            if (actualResult)
+            {
+                Assert.True(actualResult);
+            } else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
 
@@ -156,7 +192,16 @@ namespace MarsQA_1.Utils
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.DataFilePath, "Skill");
             skillPage.SkillDelete(ExcelLibHelper.ReadData(3, "Skill"));
             bool isRecordPresent = skillPage.VerifySkill(ExcelLibHelper.ReadData(3, "Skill"));
-            Assert.False(isRecordPresent);
+           // Assert.False(isRecordPresent);
+            if (!isRecordPresent)
+            {
+                Assert.False(isRecordPresent);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [Then(@"should be able to verify the deleted Skill")]
@@ -179,7 +224,16 @@ namespace MarsQA_1.Utils
             string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
             educationPage.AddEduction(collegeName, country, title, degree, yearOfPassing);
             bool isRecordPresent = educationPage.VerifyDegree(collegeName, country, title, degree, yearOfPassing);
-            Assert.True(isRecordPresent);
+            //Assert.True(isRecordPresent);
+            if (isRecordPresent)
+            {
+                Assert.True(isRecordPresent);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [Then(@"Seller should be able to fill his eduction and Verify it\.")]
@@ -201,7 +255,16 @@ namespace MarsQA_1.Utils
             string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
             educationPage.EditEducation(originalCollegeName, NewcollegeName);
             bool isRecordPresent = educationPage.VerifyDegree(NewcollegeName, country, title, degree, yearOfPassing);
-            Assert.True(isRecordPresent);
+            //Assert.True(isRecordPresent);
+            if (isRecordPresent)
+            {
+                Assert.True(isRecordPresent);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [Then(@"Seller should be able to Edit his eduction and Verify it\.")]
@@ -224,7 +287,17 @@ namespace MarsQA_1.Utils
             string yearOfPassing = ExcelLibHelper.ReadData(2, "YearOfPassing");
             educationPage.EducationDelete(NewcollegeName);
             bool isRecordPresent = educationPage.VerifyDegree(NewcollegeName, country, title, degree, yearOfPassing);
-            Assert.False(isRecordPresent);
+           // Assert.False(isRecordPresent);
+
+            if (!isRecordPresent)
+            {
+                Assert.False(isRecordPresent);
+            }
+            else
+            {
+                Assert.Fail("Verification Failed.");
+                throw new Exception("Result does not match");
+            }
         }
 
         [Then(@"Seller should be able to Delete his eduction and Verify it\.")]

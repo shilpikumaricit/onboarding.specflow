@@ -69,8 +69,10 @@ namespace MarsQA_1.SpecflowPages.Pages
                     Driver.driver.FindElement(By.XPath(string.Format(XpathConstants.skillEditButton, i))).Click();
                     IWebElement SkillEditField = Driver.driver.FindElement(By.XPath(string.Format(XpathConstants.SkillUpdateField, actualSkill)));
                     SkillEditField.Clear();
+
                     SkillEditField.SendKeys(newSkill);
                     UpdateSkillButton.Click();
+
                     break;
                 }
                 

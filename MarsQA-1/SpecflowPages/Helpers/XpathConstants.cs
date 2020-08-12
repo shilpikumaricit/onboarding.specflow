@@ -7,7 +7,7 @@ namespace MarsQA_1.SpecflowPages.Helpers
     class XpathConstants
     {
         // XPath constants for Language
-        public static string AddNewLanguageButton = "(//div[contains(.,'Add New')])[11]";
+        public static string AddNewLanguageButton = "(//div[@class='ui teal button '][contains(.,'Add New')])[1]";
 
         public static string AddLangaugeField = "//input[@placeholder='Add Language']";
 
